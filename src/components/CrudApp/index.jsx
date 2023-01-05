@@ -34,17 +34,19 @@ const CrudApp = () => {
 
   return (
     <>
-      <Form 
-        createData={createData} 
-        updateData={updateData} 
-        dataToEdit={dataToEdit} 
-        setDataToEdit={setDataToEdit} 
-      />
-      <DataTable 
-        data={players} 
-        deleteData={deleteData}
-        setDataToEdit={setDataToEdit} 
-      />
+      <article className="grid-1-2">
+        <Form 
+          createData={createData} 
+          updateData={updateData} 
+          dataToEdit={dataToEdit} 
+          setDataToEdit={setDataToEdit} 
+        />
+        <DataTable 
+          data={players} 
+          deleteData={deleteData}
+          setDataToEdit={setDataToEdit} 
+        />
+      </article>
     </>
   );
 }

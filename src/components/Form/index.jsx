@@ -55,7 +55,7 @@ const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   }
 
   return (
-    <>
+    <div>
       <h2>{dataToEdit ? 'Edit' : 'Add'}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First name: </label>
@@ -65,11 +65,11 @@ const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
         <label htmlFor="age">Age: </label>
         <input type="number" name="age" id="age" placeholder='26' onChange={handleChange} value={form.age} />
         <label htmlFor="shirtNumber">Shirt number: </label>
-        <input type="text" name="shirtNumber" id="shirtNumber" placeholder='10' onChange={handleChange} value={form.shirtNumber} />
+        <input type="number" name="shirtNumber" id="shirtNumber" placeholder='10' onChange={handleChange} value={form.shirtNumber} />
         <input type="submit" value="Send" />
         <input type="reset" value="Reset" onClick={handleReset} />
       </form>
-    </>
+    </div>
   )
 }
 
