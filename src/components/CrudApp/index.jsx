@@ -20,7 +20,15 @@ const CrudApp = () => {
     setPlayers(newData);
   }
 
-  const deleteData = data => {
+  const deleteData = id => {
+    let isDelete = window.confirm(`Are you sure to delete the record with id ${id}?`);
+
+    if (isDelete) {
+      let newData = players.filter(player => player.id !== id);
+      setPlayers(newData);
+    } else {
+      return;
+    }
 
   }
 
