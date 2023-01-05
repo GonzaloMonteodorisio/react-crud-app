@@ -1,15 +1,16 @@
 import React from 'react';
 
-const DataTableRow = ({player}) => {
+const DataTableRow = ({ player, setDataToEdit, deleteData }) => {
+  let { id, firstName, lastName, age, shirtNumber } = player;
   return (
-    <tr key={player.id}>
-      <td>{player.shirtNumber}</td>
-      <td>{player.firstName}</td>
-      <td>{player.lastName}</td>
-      <td>{player.age}</td>
+    <tr key={id}>
+      <td>{shirtNumber}</td>
+      <td>{firstName}</td>
+      <td>{lastName}</td>
+      <td>{age}</td>
       <td>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => setDataToEdit(player)}>Edit</button>
+        <button onClick={() => deleteData(id)}>Delete</button>
       </td>
     </tr>
   );

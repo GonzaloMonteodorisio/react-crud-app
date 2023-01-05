@@ -16,7 +16,8 @@ const CrudApp = () => {
   }
 
   const updateData = data => {
-
+    let newData = players.map(player => player.id === data.id ? data : player);
+    setPlayers(newData);
   }
 
   const deleteData = data => {

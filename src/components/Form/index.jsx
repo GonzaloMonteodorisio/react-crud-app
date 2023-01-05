@@ -9,8 +9,15 @@ const initialForm = {
 }
 
 const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
-
   const [form, setForm] = useState(initialForm);
+
+  useEffect(() => {
+    if (dataToEdit) {
+      setForm(dataToEdit);
+    } else {
+      setForm(initialForm);
+    }
+  }, [dataToEdit]);
 
   const handleChange = e => {
     if (isNaN(parseInt(e.target.value))) {
@@ -49,7 +56,7 @@ const Form = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
   return (
     <>
-      <h2>Add</h2>
+      <h2>{dataToEdit ? 'Edit' : 'Add'}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First name: </label>
         <input type="text" name="firstName" id="firstName" placeholder='Albert' onChange={handleChange} value={form.firstName} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import DataTableRow from '../DataTableRow';
 
-const DataTable = ({data}) => {
+const DataTable = ({data, setDataToEdit, deleteData}) => {
   return (
     <div>
       <h2>Data Table</h2>
@@ -25,7 +25,13 @@ const DataTable = ({data}) => {
                 </td>
               </tr>) 
               : (
-                data.map(player => <DataTableRow player={player} key={player.id} />)
+                data.map(player => 
+                  <DataTableRow 
+                    key={player.id}
+                    player={player}  
+                    setDataToEdit={setDataToEdit}
+                    deleteData={deleteData}
+                />)
               )
           }
         </tbody>
